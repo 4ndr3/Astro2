@@ -18,7 +18,7 @@ Exoplanet_Name = ['CoRoT-3 b','Kepler-14 b','Kepler-186 f','Kepler-440 b','HD 14
 Exoplanet_Periode_inTagen = np.array([4.257, 6.790, 129.946, 101.111, 1070, 461, 6.088, 1.549])
 Exoplanet_Masse_inJupitermassen = np.array([22, 8.4, 0.0042, 0.0137, 1.19, 1.47, 0.92, 1.77])
 Expolanet_Muttersternmasse_inSonnenmassen = np.array([1.37, 1.51, 0.48, 0.58, 1.07, 1.06, 0.73, 1.29])
-Exoplanet_Klasse = [''] * Exoplanet_Name.size
+Exoplanet_Klasse = [''] * Exoplanet_Periode_inTagen.size
 
 #Daten nach SI konvertieren
 Exoplanet_Periode = Exoplanet_Periode_inTagen * 86400 # [s]
@@ -31,7 +31,7 @@ Expolanet_Muttersternmasse = Expolanet_Muttersternmasse_inSonnenmassen * M_sun.v
 print('Gegeben')
 print('=======')
 print('Name		Perioden [d]	Masse [m_Jupiter]	Muttersternmasse [m_Sonne]')
-print('-----------------------------------------------------------------------------------')
+print('----------------------------------------------------------------------------------')
 for Zeile in zip(Exoplanet_Name, Exoplanet_Periode_inTagen, Exoplanet_Masse_inJupitermassen, Expolanet_Muttersternmasse_inSonnenmassen):
     print(Zeile[0],"	{1:3.2f}		{2:3.3f}			{3:3.3f}".format(Zeile[0], Zeile[1], Zeile[2], Zeile[3]))
 print('\n')
@@ -46,10 +46,10 @@ a_inAU = a / au.value
 
 print('a) Gesucht: Große Halbachsen a')
 print('==============================')
-print('Name		M [10^30 Kg]	a [Km]		a [AU]')
-print('-------------------------------------------------------')
-for Zeile in zip(Exoplanet_Name, M, a, a_inAU):
-    print(Zeile[0],"	{1:3.3f}		{2:3.0f}		{3:3.3f}".format(Zeile[0], Zeile[1]/1e30, Zeile[2]/1000, Zeile[3]))
+print('Name		a [Km]		a [AU]')
+print('--------------------------------------')
+for Zeile in zip(Exoplanet_Name, a, a_inAU):
+    print(Zeile[0],"	{1:3.0f}		{2:3.3f}".format(Zeile[0], Zeile[1]/1000, Zeile[2]))
 
 
 #b)
@@ -84,7 +84,7 @@ print('')
 print('c) Gesucht: Klassifizierung der Objekte')
 print('=======================================')
 print('Name		 Klasse')
-print('------------------------')
+print('-----------------------')
 for Zeile in zip(Exoplanet_Name, Exoplanet_Klasse):
 	print (Zeile[0],"	",Zeile[1])
 	
