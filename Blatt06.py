@@ -55,14 +55,12 @@ Objekt_m = np.array([60 * M_sun.value, 0, 2 * M_sun.value]) # [Kg], dummy-Wert f
 weisserZwerg_ro = 1e9 # [Kg / cm^3]
 Objekt_ro_min = [''] * Objekt_T.size
 Objekt_ro = np.array([1, 1, 1]) # [Kg/m^3], dummy Dichten, weil woher nehmen?
-Objekt_Entartung = [''] * Objekt_T.size
+Objekt_Entartung = [False] * Objekt_T.size
 
 for i in range(Objekt_T.size):
 	Objekt_ro_min[i] = Mindestdichte(Objekt_T[i])
 	if Objekt_ro[i] < Objekt_ro_min[i]:
 		Objekt_Entartung[i] = True
-	else:
-		Objekt_Entartung[i] = False
 
 print('')
 print('c) Gesucht: Entartung')
