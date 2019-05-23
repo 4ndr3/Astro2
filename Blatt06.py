@@ -12,10 +12,8 @@ from scipy.constants import h
 from scipy.constants import m_e
 from scipy.constants import k
 from scipy.constants import u
-#from scipy.constants import G
 from astropy.constants import au
 from astropy.constants import M_sun
-#from astropy.constants import M_jup
 
 #a) 
 A = 4. # Massenzahl He
@@ -61,9 +59,7 @@ Objekt_Entartung = [''] * Objekt_T.size
 
 for i in range(Objekt_T.size):
 	Objekt_ro_min[i] = Mindestdichte(Objekt_T[i])
-
-for i in range(Objekt_ro.size):
-	if 	Objekt_ro[i] < Objekt_ro_min[i]:
+	if Objekt_ro[i] < Objekt_ro_min[i]:
 		Objekt_Entartung[i] = True
 
 print('')
