@@ -61,6 +61,8 @@ for i in range(Objekt_T.size):
 	Objekt_ro_min[i] = Mindestdichte(Objekt_T[i])
 	if Objekt_ro[i] < Objekt_ro_min[i]:
 		Objekt_Entartung[i] = True
+	else:
+		Objekt_Entartung[i] = False
 
 print('')
 print('c) Gesucht: Entartung')
@@ -71,6 +73,6 @@ for Zeile in zip(Objekt_Name, Objekt_T, Objekt_ro_min, Objekt_ro, Objekt_Entartu
     print(Zeile[0],"	{1:1.0f}		{2:1.0f}		{3:1.0f}".format(Zeile[0], Zeile[1]/1000, Zeile[2], Zeile[3]),Zeile[4])
 
 print('')
-print('Ergebnis ist Prinzipdarstellung des Codes. Es ist falsch weil unklar ist wo die Objektdichte herkommen soll.')
+print('Ergebnis von c) ist Prinzipdarstellung des Codes. Es ist falsch weil unklar ist wo die Objektdichte herkommen soll.')
 
 plt.show() # für b)
